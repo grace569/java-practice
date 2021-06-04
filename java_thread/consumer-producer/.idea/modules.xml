@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/simple_thread.iml" filepath="$PROJECT_DIR$/simple_thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumer-producer.iml" filepath="$PROJECT_DIR$/consumer-producer.iml" />
     </modules>
   </component>
 </project>
