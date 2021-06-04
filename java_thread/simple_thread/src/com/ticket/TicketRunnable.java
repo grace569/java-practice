@@ -10,17 +10,26 @@ public class TicketRunnable implements Runnable{
 
     @Override
     public void run() {
-        if (ticketAmount > 0){
-            System.out.println(Thread.currentThread().getName() + "Ticket Number " + (ticketAmount--) + " is being sold");
+        for(int i = 0; i < 100; i++){
+            synchronized (this){
+                if (ticketAmount > 0){
+                    System.out.println(Thread.currentThread().getName() + "Ticket Number " + (ticketAmount--) + " is being sold");
+                }
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
     public static void main(String[] args) {
         TicketRunnable tr = new TicketRunnable();
-        Thread t1 = new Thread(tr);
-        Thread t2 = new Thread(tr);
-        Thread t3 = new Thread(tr);
-        Thread t4 = new Thread(tr);
+        Thread t1 = new Thread(tr, "A");
+        Thread t2 = new Thread(tr, "B");
+        Thread t3 = new Thread(tr,"C");
+        Thread t4 = new Thread(tr, "D");
 
         t1.start();
         t2.start();
