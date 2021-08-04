@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 
-public class ForJoinPoolSumAction {
+public class ForkJoinPoolSumAction {
     public static void main(String[] args) throws Exception {
         int[] arr = new int[100];
         Random random = new Random();
